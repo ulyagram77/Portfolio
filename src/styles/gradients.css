@@ -101,6 +101,12 @@
     background: -webkit-linear-gradient(90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
 }
 
+.yellow-gradient {
+    background: #804dee;
+    background: linear-gradient(90deg, #ffde59 0%, rgba(27, 27, 27, 0) 100%);
+    background: -webkit-linear-gradient(90deg, #ffde59 0%, rgba(27, 27, 27, 0) 100%);
+}
+
 .menu-gradient {
     background: #804dee;
     background: linear-gradient(90deg, #804dee 0%, #3c3350 100%);

@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import { services } from '@/constants';
 import { withSectionWrapper } from '@/hoc';
 import { styles } from '@/styles';
+import { cn } from '@/utils/cn';
 import { fadeIn, textVariant } from '@/utils/motion';
 
 const ServiceCard = ({ index, title, icon }) => {
@@ -49,12 +50,12 @@ const About = withSectionWrapper(() => {
     return (
         <>
             <motion.div variants={textVariant()}>
-                <p className={styles.sectionSubText}>{t('about.subtitle')}</p>
+                <p className={cn(styles.sectionSubText)}>{t('about.subtitle')}</p>
                 <h2 className={styles.sectionHeadText}>{t('about.title')}</h2>
             </motion.div>
             <motion.p
                 variants={fadeIn('', '', 0.1, 1)}
-                className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+                className="mt-4 text-white text-[17px] max-w-3xl leading-[30px]"
                 ref={paragraphRef}
             ></motion.p>
 

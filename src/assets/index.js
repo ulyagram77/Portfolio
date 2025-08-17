@@ -28,12 +28,12 @@ import firebase from './tech/firebase.png';
 import git from './tech/git.png';
 import html from './tech/html.png';
 import javascript from './tech/javascript.png';
-import nest from './tech/nest.svg';
-import next from './tech/next.svg';
+import nest from './tech/nest.png';
+import next from './tech/next.png';
 import reactjs from './tech/reactjs.png';
 import redux from './tech/redux.png';
 import tailwind from './tech/tailwind.png';
-import threejs from './tech/threejs.svg';
+import threejs from './tech/threejs.png';
 import typescript from './tech/typescript.png';
 import web from './web.png';
 

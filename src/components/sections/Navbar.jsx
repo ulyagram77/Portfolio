@@ -23,7 +23,9 @@ const LangButtons = () => {
     const currentLanguage = i18n.language;
 
     const setButtonClass = language =>
-        `transition-all ${currentLanguage === language ? 'text-[#915eff] font-bold' : ''}`;
+        cn('transition-all', {
+            'text-accent-300 font-bold': currentLanguage === language,
+        });
 
     return (
         <div className="ml-10 flex gap-2">
@@ -78,7 +80,7 @@ const Navbar = () => {
                 className={cn(
                     'absolute inset-0 bg-none z-0 transition-colors ease-in-out duration-300',
                     {
-                        'bg-primary/70': scrolled,
+                        'bg-dark-900/50': scrolled,
                     },
                 )}
             ></div>
@@ -104,11 +106,13 @@ const Navbar = () => {
                     {navLinks.map(nav => (
                         <li
                             key={nav.id}
-                            className={`${
-                                active === nav.title
-                                    ? 'text-white'
-                                    : 'text-secondary'
-                            } hover:text-white text-[18px] font-medium cursor-pointer transition-color ease-in-out duration-300`}
+                            className={cn(
+                                'hover:text-accent-100 text-[18px] font-medium cursor-pointer transition-color ease-in-out duration-300',
+                                {
+                                    'text-accent-300': active === nav.title,
+                                    'text-white': active !== nav.title,
+                                },
+                            )}
                             onClick={() => setActive(nav.title)}
                         >
                             {nav.href ? (
@@ -131,19 +135,25 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: toggle ? 1 : 0, y: toggle ? 0 : -20 }}
                         transition={{ duration: 0.3 }}
-                        className={`${
-                            !toggle ? 'hidden' : 'flex'
-                        }  p-6 menu-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+                        className={cn(
+                            'p-6 menu-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl',
+                            {
+                                hidden: !toggle,
+                                flex: toggle,
+                            },
+                        )}
                     >
                         <ul className="list-none flex justify-center items-center flex-1 flex-col gap-4">
                             {navLinks.map(nav => (
                                 <li
                                     key={nav.id}
-                                    className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                                        active === nav.title
-                                            ? 'text-white'
-                                            : 'text-secondary'
-                                    }`}
+                                    className={cn(
+                                        'font-poppins font-medium cursor-pointer text-[16px]',
+                                        {
+                                            'text-white': active === nav.title,
+                                            'text-secondary': active !== nav.title,
+                                        },
+                                    )}
                                     onClick={() => {
                                         setToggle(!toggle);
                                         setActive(nav.title);

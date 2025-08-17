@@ -30,8 +30,8 @@ const AppContent = () => {
     return (
         <>
             <Progress />
-            <main className="relative z-0 bg-primary">
-                <section className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+            <main className="relative z-0">
+                <section className="bg-hero-pattern bg-fixed bg-cover bg-no-repeat bg-center">
                     <Navbar />
                     <ErrorBoundary>
                         <Hero />
