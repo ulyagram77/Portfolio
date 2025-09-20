@@ -9,15 +9,15 @@ import Tech from './Tech';
 import Works from './Works';
 
 export {
-    Hero,
-    Navbar,
-    About,
-    Tech,
-    Experience,
-    Works,
-    Contact,
-    EarthCanvas,
-    BallCanvas,
-    ComputersCanvas,
-    StarsCanvas,
+  Hero,
+  Navbar,
+  About,
+  Tech,
+  Experience,
+  Works,
+  Contact,
+  EarthCanvas,
+  BallCanvas,
+  ComputersCanvas,
+  StarsCanvas,
 };

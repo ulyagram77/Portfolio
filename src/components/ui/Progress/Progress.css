@@ -1,48 +1,48 @@
 .scroll-progress {
-    position: fixed;
-    height: 5px;
+  position: fixed;
+  height: 5px;
 
-    bottom: 0;
-    left: 0;
+  bottom: 0;
+  left: 0;
 
-    background-color: #915eff;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    animation: scroll-progress linear;
-    transition: 0.2s all ease-out;
-    z-index: 10;
+  background-color: #915eff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  animation: scroll-progress linear;
+  transition: 0.2s all ease-out;
+  z-index: 10;
 }
 
 .scroll-progress.done {
-    @apply bg-emerald-500 text-neutral-800;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 2px;
+  @apply bg-emerald-500 text-neutral-800;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 320px) {
-    .scroll-progress.done {
-        padding: 10px 0;
-        font-size: 12px;
-    }
+  .scroll-progress.done {
+    padding: 10px 0;
+    font-size: 12px;
+  }
 }
 
 @media (min-width: 640px) {
-    .scroll-progress.done {
-        padding: 14px 0;
-        font-size: 14px;
-    }
+  .scroll-progress.done {
+    padding: 14px 0;
+    font-size: 14px;
+  }
 }
 
 @keyframes scroll-progress {
-    from {
-        width: 0px;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
 }

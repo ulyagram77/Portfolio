@@ -5,15 +5,15 @@ import path from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    plugins: [
-        react(),
-        legacy({
-            targets: ['defaults', 'not IE 11'],
-        }),
-    ],
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
-        },
+  plugins: [
+    react(),
+    legacy({
+      targets: ['defaults', 'not IE 11'],
+    }),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
     },
+  },
 });

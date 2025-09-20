@@ -8,12 +8,12 @@ import Preloader from './Preloader';
 import Progress from './Progress/Progress';
 
 export {
-    MenuIcon,
-    Progress,
-    CanvasLoader,
-    Preloader,
-    InputErrorMessage,
-    ConfettiEffect,
-    Modal,
-    IceSvgFilter,
+  MenuIcon,
+  Progress,
+  CanvasLoader,
+  Preloader,
+  InputErrorMessage,
+  ConfettiEffect,
+  Modal,
+  IceSvgFilter,
 };

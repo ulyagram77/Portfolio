@@ -6,95 +6,95 @@
 @tailwind utilities;
 
 body {
-    position: relative;
+  position: relative;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    color-scheme: dark;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 #root {
-    position: relative;
-    height: 100vh;
-    background-color: #050816;
+  position: relative;
+  height: 100vh;
+  background-color: #050816;
 }
 
 .hash-span {
-    margin-top: -100px;
-    padding-bottom: 100px;
-    display: block;
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
 }
 
 .btn {
-    transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .btn:disabled {
-    @apply bg-zinc-700 text-gray-500;
-    cursor: not-allowed;
+  @apply bg-zinc-700 text-gray-500;
+  cursor: not-allowed;
 }
 
 .social__icon {
-    transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
 }
 
 @media (any-hover: hover) {
-    .btn:not(:disabled):hover {
-        background-color: #915eff;
-        transform: skew(-10deg);
-    }
+  .btn:not(:disabled):hover {
+    background-color: #915eff;
+    transform: skew(-10deg);
+  }
 
-    .social:hover > :not(:hover) {
-        opacity: 0.2;
-    }
+  .social:hover > :not(:hover) {
+    opacity: 0.2;
+  }
 
-    .social:hover > :hover {
-        transform: scale(1.2);
-    }
+  .social:hover > :hover {
+    transform: scale(1.2);
+  }
 }
 
 /* canvas- styles */
 .canvas-loader {
-    font-size: 10px;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    position: relative;
-    text-indent: -9999em;
-    animation: mulShdSpin 1.1s infinite ease;
-    transform: translateZ(0);
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
 }
 
 /* scroll cfg */
 
 .custom-scroll {
-    scrollbar-width: thin;
-    scrollbar-color: #402a6f #050816;
+  scrollbar-width: thin;
+  scrollbar-color: #402a6f #050816;
 }
 
 .custom-scroll::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-    background: #402a6f;
+  background: #402a6f;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-    background-color: #402a6f;
-    border-radius: 10px;
-    border: 2px solid #050816;
+  background-color: #402a6f;
+  border-radius: 10px;
+  border: 2px solid #050816;
 }
 
 @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-    .navbar {
-        backdrop-filter: blur(10px);
-    }
+  .navbar {
+    backdrop-filter: blur(10px);
+  }
 }
 
 /* Если backdrop-filter поддерживается */
@@ -108,93 +108,93 @@ body {
 /* animations */
 
 @keyframes mulShdSpin {
-    0%,
-    100% {
-        box-shadow:
-            0em -2.6em 0em 0em #ffffff,
-            1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-            2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-            1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-            0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-            -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
-            -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
-    }
-    12.5% {
-        box-shadow:
-            0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
-            1.8em -1.8em 0 0em #ffffff,
-            2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-            1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-            0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-            -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
-    }
-    25% {
-        box-shadow:
-            0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
-            1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7),
-            2.5em 0em 0 0em #ffffff,
-            1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-            0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-            -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-    }
-    37.5% {
-        box-shadow:
-            0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-            1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
-            2.5em 0em 0 0em rgba(255, 255, 255, 0.7),
-            1.75em 1.75em 0 0em #ffffff,
-            0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-            -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-    }
-    50% {
-        box-shadow:
-            0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-            1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-            2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
-            1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7),
-            0em 2.5em 0 0em #ffffff,
-            -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
-            -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-    }
-    62.5% {
-        box-shadow:
-            0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-            1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-            2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-            1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
-            0em 2.5em 0 0em rgba(255, 255, 255, 0.7),
-            -1.8em 1.8em 0 0em #ffffff,
-            -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-    }
-    75% {
-        box-shadow:
-            0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-            1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-            2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-            1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-            0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
-            -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7),
-            -2.6em 0em 0 0em #ffffff,
-            -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-    }
-    87.5% {
-        box-shadow:
-            0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
-            1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
-            2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
-            1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
-            0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
-            -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
-            -2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
-            -1.8em -1.8em 0 0em #ffffff;
-    }
+  0%,
+  100% {
+    box-shadow:
+      0em -2.6em 0em 0em #ffffff,
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+  }
+  12.5% {
+    box-shadow:
+      0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
+      1.8em -1.8em 0 0em #ffffff,
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+  }
+  25% {
+    box-shadow:
+      0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7),
+      2.5em 0em 0 0em #ffffff,
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  37.5% {
+    box-shadow:
+      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.7),
+      1.75em 1.75em 0 0em #ffffff,
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7),
+      0em 2.5em 0 0em #ffffff,
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  62.5% {
+    box-shadow:
+      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.7),
+      -1.8em 1.8em 0 0em #ffffff,
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    box-shadow:
+      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7),
+      -2.6em 0em 0 0em #ffffff,
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  87.5% {
+    box-shadow:
+      0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
+      -1.8em -1.8em 0 0em #ffffff;
+  }
 }
