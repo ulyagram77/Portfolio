@@ -23,7 +23,6 @@ import {
   sneaks,
   sniffCertificate,
   step,
-  table,
   tailwind,
   threejs,
   typescript,
@@ -228,29 +227,8 @@ const projects = [
     demo_link: 'https://marvel-portal-react-ten.vercel.app/',
   },
   {
-    name: 'Workers Table',
-    description: 'works.projects.1.description',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'CRUD',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'bootstrap',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: table,
-    source_code_link: 'https://github.com/ulyagram77/Workers-Table-React',
-    demo_link: 'https://workers-table-react.vercel.app/',
-  },
-  {
     name: 'Sneaks Store',
-    description: 'works.projects.2.description',
+    description: 'works.projects.1.description',
     tags: [
       {
         name: 'vanilla-js',
@@ -271,7 +249,7 @@ const projects = [
   },
   {
     name: 'X-OPEN',
-    description: 'works.projects.3.description',
+    description: 'works.projects.2.description',
     tags: [
       {
         name: 'vanilla-js',
@@ -288,7 +266,7 @@ const projects = [
   },
   {
     name: 'Pulse Store',
-    description: 'works.projects.4.description',
+    description: 'works.projects.3.description',
     tags: [
       {
         name: 'vanilla-js',
