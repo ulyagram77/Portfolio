@@ -3,18 +3,14 @@ import { useEffect, useRef } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { motion } from 'motion/react';
-
 import { demo, github } from '@/assets';
 import { projects } from '@/constants';
 import { withSectionWrapper } from '@/hoc';
 import { styles } from '@/styles';
-import { fadeIn, textVariant } from '@/utils/motion';
 
 import { Tooltip } from '../ui';
 
 const ProjectCard = ({
-  index,
   name,
   description,
   tags,
@@ -25,12 +21,7 @@ const ProjectCard = ({
   const { t } = useTranslation();
 
   return (
-    <motion.a
-      variants={fadeIn('up', 'spring', index * 0.5, 0.75)}
-      href={demo_link}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href={demo_link} target="_blank" rel="noopener noreferrer">
       <div className="w-full rounded-3xl bg-tertiary p-5 sm:w-[360px]">
         <div className="relative h-[230px] w-full">
           <img
@@ -86,7 +77,7 @@ const ProjectCard = ({
           ))}
         </div>
       </div>
-    </motion.a>
+    </a>
   );
 };
 
@@ -100,17 +91,16 @@ const Works = withSectionWrapper(() => {
 
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <div>
         <p className={`${styles.sectionSubText} `}>{t('works.subtitle')}</p>
         <h2 className={`${styles.sectionHeadText}`}>{t('works.title')}</h2>
-      </motion.div>
+      </div>
 
       <div className="flex w-full">
-        <motion.p
-          variants={fadeIn('', '', 0.1, 1)}
+        <p
           className="mt-3 max-w-3xl text-[17px] leading-[30px] text-secondary"
           ref={paragraphRef}
-        ></motion.p>
+        ></p>
       </div>
 
       <div className="mt-20 flex flex-wrap items-center justify-center gap-7 xl:justify-start">
