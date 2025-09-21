@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import { SocialIcons } from '..';
 import { AnimatePresence, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 import { Portal } from '@/components/common';
-import { socialIcons } from '@/constants';
 import { styles } from '@/styles';
 
 const Modal = ({ open, setOpen }) => {
@@ -33,14 +33,14 @@ const Modal = ({ open, setOpen }) => {
       {open && (
         <Portal rootId="body">
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-60 z-30"
+            className="fixed inset-0 z-30 bg-black bg-opacity-60"
             onClick={e => onOverlayClick(e)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-10/12 h-1/2 md:w-3/4 lg:w-1/2 xl:w-2/5 bg-tertiary rounded-2xl z-50 p-10"
+              className="absolute inset-1/2 z-50 h-1/2 w-10/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-tertiary p-10 md:w-3/4 lg:w-1/2 xl:w-2/5"
               role="dialog"
               aria-modal="true"
               initial={{ opacity: 0 }}
@@ -49,13 +49,13 @@ const Modal = ({ open, setOpen }) => {
               transition={{ duration: 0.3 }}
             >
               <span
-                className="absolute top-0 right-0 mr-5 mt-5 text-5xl cursor-pointer"
+                className="absolute right-0 top-0 mr-5 mt-5 cursor-pointer text-5xl"
                 onClick={() => setOpen(false)}
               >
                 &times;
               </span>
 
-              <div className="flex flex-col justify-between items-center h-full text-center">
+              <div className="flex h-full flex-col items-center justify-between text-center">
                 <div>
                   <p className={styles.sectionSubText}>{t('modal.subtitle')}</p>
                   <h2 className={styles.sectionHeadText}>
@@ -63,7 +63,7 @@ const Modal = ({ open, setOpen }) => {
                   </h2>
                 </div>
 
-                <p className="text-secondary text-[16px] sm:text-lg">
+                <p className="text-[16px] text-secondary sm:text-lg">
                   {t('modal.text')}
                 </p>
 
@@ -71,21 +71,7 @@ const Modal = ({ open, setOpen }) => {
                   <b className="text-md sm:text-lg">{t('modal.wish')} &#128526;</b>
                 </p>
 
-                <div className="flex flex-row items-center gap-5 social cursor-pointer">
-                  {socialIcons.map(social => (
-                    <div
-                      key={social.link}
-                      className="w-10 h-10 social__icon"
-                      onClick={() => window.open(social.link, '_blank')}
-                    >
-                      <img
-                        src={social.icon}
-                        className="object-contain"
-                        alt="social icon"
-                      />
-                    </div>
-                  ))}
-                </div>
+                <SocialIcons />
               </div>
             </motion.div>
           </motion.div>

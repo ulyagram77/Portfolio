@@ -12,7 +12,7 @@ import { styles } from '@/styles';
 import { slideIn } from '@/utils/motion';
 
 import { EarthCanvas } from '../canvas';
-import { ConfettiEffect, InputErrorMessage, Modal } from '../ui';
+import { ConfettiEffect, InputErrorMessage, Modal, SocialIcons } from '../ui';
 
 const Contact = withSectionWrapper(() => {
   const [loading, setLoading] = useState(false);
@@ -78,21 +78,22 @@ const Contact = withSectionWrapper(() => {
 
   return (
     <>
-      <div className="relative xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+      <div className="relative flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
         <motion.div
           variants={slideIn('left', 'tween', 0.2, 1)}
-          className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+          className="flex-[0.75] rounded-2xl bg-black-100 p-8"
         >
           <p className={styles.sectionSubText}>{t('contact.subtitle')}</p>
           <h3 className={styles.sectionHeadText}>{t('contact.title')}</h3>
+          <SocialIcons className="mb-8 mt-3" />
 
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-12 flex flex-col gap-5"
+            className="flex flex-col gap-5"
           >
-            <label className="relative flex flex-col gap-3 h-[130px]">
-              <span className="text-white font-medium ">
+            <label className="relative flex h-[130px] flex-col gap-3">
+              <span className="font-medium text-white">
                 {t('contact.form.fields.0.label')}
               </span>
               <input
@@ -102,14 +103,14 @@ const Contact = withSectionWrapper(() => {
                 onChange={e => name.onChange(e)}
                 onBlur={e => name.onBlur(e)}
                 placeholder={t('contact.form.fields.0.placeholder')}
-                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg font-medium ${name.isValid ? 'border-2 border-rose-500 outline-rose-500' : ''}`}
+                className={`rounded-lg bg-tertiary px-6 py-4 font-medium text-white placeholder:text-secondary ${name.isValid ? 'border-2 border-rose-500 outline-rose-500' : ''}`}
                 autoComplete="name"
               />
               <InputErrorMessage field={name} />
             </label>
 
-            <label className="relative flex flex-col gap-3 h-[130px]">
-              <span className="text-white font-medium ">
+            <label className="relative flex h-[130px] flex-col gap-3">
+              <span className="font-medium text-white">
                 {t('contact.form.fields.1.label')}
               </span>
               <input
@@ -119,14 +120,14 @@ const Contact = withSectionWrapper(() => {
                 onChange={e => email.onChange(e)}
                 onBlur={e => email.onBlur(e)}
                 placeholder={t('contact.form.fields.1.placeholder')}
-                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg font-medium ${email.isValid ? 'border-2 border-rose-500 outline-rose-500' : ''}`}
+                className={`rounded-lg bg-tertiary px-6 py-4 font-medium text-white placeholder:text-secondary ${email.isValid ? 'border-2 border-rose-500 outline-rose-500' : ''}`}
                 autoComplete="email"
               />
               <InputErrorMessage field={email} />
             </label>
 
-            <label className="relative flex flex-col gap-3 h-[273px]">
-              <span className="text-white font-medium ">
+            <label className="relative flex h-[273px] flex-col gap-3">
+              <span className="font-medium text-white">
                 {t('contact.form.fields.2.label')}
               </span>
               <textarea
@@ -136,14 +137,14 @@ const Contact = withSectionWrapper(() => {
                 onChange={e => message.onChange(e)}
                 onBlur={e => message.onBlur(e)}
                 placeholder={t('contact.form.fields.2.placeholder')}
-                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg font-medium resize-none ${message.isValid ? 'border-2 border-rose-500 outline-rose-500' : ''}`}
+                className={`resize-none rounded-lg bg-tertiary px-6 py-4 font-medium text-white placeholder:text-secondary ${message.isValid ? 'border-2 border-rose-500 outline-rose-500' : ''}`}
               />
               <InputErrorMessage field={message} />
             </label>
 
             <button
               type="submit"
-              className="btn bg-tertiary py-3 px-8 text-white font-bold shadow-md shadow-primary rounded-xl md:w-full lg:w-fit"
+              className="btn rounded-xl bg-tertiary px-8 py-3 font-bold text-white shadow-md shadow-primary md:w-full lg:w-fit"
               disabled={loading || isFormValid}
             >
               {loading
@@ -155,7 +156,7 @@ const Contact = withSectionWrapper(() => {
 
         <motion.div
           variants={slideIn('right', 'tween', 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+          className="h-[350px] md:h-[550px] xl:h-auto xl:flex-1"
         >
           <EarthCanvas />
         </motion.div>

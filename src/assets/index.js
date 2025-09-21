@@ -21,6 +21,7 @@ import table from './projects/table.png';
 import xopen from './projects/xopen.png';
 import githubContacts from './social/github.svg';
 import instagramContacts from './social/instagram.svg';
+import linkedinContacts from './social/linkedin.svg';
 import telegramContacts from './social/telegram.svg';
 import css from './tech/css.png';
 import figma from './tech/figma.png';
@@ -76,4 +77,5 @@ export {
   telegramContacts,
   typescript,
   firebase,
+  linkedinContacts,
 };

@@ -9,6 +9,7 @@ import {
   instagramContacts,
   javascript,
   khpi,
+  linkedinContacts,
   marvel,
   mobile,
   nest,
@@ -24,7 +25,6 @@ import {
   step,
   table,
   tailwind,
-  telegramContacts,
   threejs,
   typescript,
   udemy,
@@ -318,8 +318,11 @@ const validationShema = {
 };
 
 const socialIcons = [
+  {
+    icon: linkedinContacts,
+    link: 'https://www.linkedin.com/in/kyrylo-ulianov-832a62233',
+  },
   { icon: githubContacts, link: 'https://github.com/ulyagram77' },
-  { icon: telegramContacts, link: 'https://t.me/Flaming77' },
   { icon: instagramContacts, link: 'https://www.instagram.com/ulyagram77' },
 ];
 

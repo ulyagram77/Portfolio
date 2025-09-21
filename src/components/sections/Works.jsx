@@ -11,6 +11,8 @@ import { withSectionWrapper } from '@/hoc';
 import { styles } from '@/styles';
 import { fadeIn, textVariant } from '@/utils/motion';
 
+import { Tooltip } from '../ui';
+
 const ProjectCard = ({
   index,
   name,
@@ -23,43 +25,52 @@ const ProjectCard = ({
   const { t } = useTranslation();
 
   return (
-    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
-      <div className="bg-tertiary p-5 rounded-3xl sm:w-[360px] w-full">
-        <div className="relative w-full h-[230px]">
+    <motion.a
+      variants={fadeIn('up', 'spring', index * 0.5, 0.75)}
+      href={demo_link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="w-full rounded-3xl bg-tertiary p-5 sm:w-[360px]">
+        <div className="relative h-[230px] w-full">
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
+            className="h-full w-full rounded-2xl object-cover"
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover gap-2">
-            <div
-              onClick={() => window.open(demo_link, '_blank')}
-              className="green-pink-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={demo}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
+          <div className="card-img_hover absolute inset-0 m-3 flex justify-end gap-2">
+            <Tooltip tip="View Live Demo">
+              <div
+                onClick={() => window.open(demo_link, '_blank')}
+                className="green-pink-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full"
+              >
+                <img
+                  src={demo}
+                  alt="source code"
+                  className="h-1/2 w-1/2 object-contain"
+                />
+              </div>
+            </Tooltip>
 
-            <div
-              onClick={() => window.open(source_code_link, '_blank')}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
+            <Tooltip tip="View Source Code">
+              <div
+                onClick={() => window.open(source_code_link, '_blank')}
+                className="black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full"
+              >
+                <img
+                  src={github}
+                  alt="source code"
+                  className="h-1/2 w-1/2 object-contain"
+                />
+              </div>
+            </Tooltip>
           </div>
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="h-[90px] mt-2 text-secondary text-[14px] overflow-auto custom-scroll">
+          <h3 className="text-[24px] font-bold text-white">{name}</h3>
+          <p className="custom-scroll mt-2 h-[90px] overflow-auto text-[14px] text-secondary">
             {t(description)}
           </p>
         </div>
@@ -68,14 +79,14 @@ const ProjectCard = ({
           {tags.map(tag => (
             <div
               key={`${name}-${tag.name}`}
-              className="bg-primary rounded-2xl px-3 py-0.5"
+              className="rounded-2xl bg-primary px-3 py-0.5"
             >
               <p className={`text-[14px] ${tag.color}`}>#{tag.name}</p>
             </div>
           ))}
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 };
 
@@ -94,15 +105,15 @@ const Works = withSectionWrapper(() => {
         <h2 className={`${styles.sectionHeadText}`}>{t('works.title')}</h2>
       </motion.div>
 
-      <div className="w-full flex">
+      <div className="flex w-full">
         <motion.p
           variants={fadeIn('', '', 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 max-w-3xl text-[17px] leading-[30px] text-secondary"
           ref={paragraphRef}
         ></motion.p>
       </div>
 
-      <div className="mt-20 flex justify-center items-center flex-wrap gap-7  xl:justify-start">
+      <div className="mt-20 flex flex-wrap items-center justify-center gap-7 xl:justify-start">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
