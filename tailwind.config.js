@@ -17,12 +17,15 @@ export default {
       },
       screens: {
         xs: '450px',
-        hoverable: { raw: '(any-hover: hover)' },
       },
       backgroundImage: {
         'hero-pattern': "url('/src/assets/herobg.png')",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('hoverable', '@media (any-hover: hover)');
+    },
+  ],
 };
