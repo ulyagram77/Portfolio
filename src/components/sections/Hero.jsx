@@ -3,7 +3,7 @@ import { lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 import { styles } from '@/styles';
 

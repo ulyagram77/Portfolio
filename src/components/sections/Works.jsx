@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 import { demo, github } from '@/assets';
 import { projects } from '@/constants';

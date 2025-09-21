@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 import { logo } from '@/assets';
 import { navLinks } from '@/constants';
@@ -64,19 +64,19 @@ const Navbar = () => {
     <nav
       className={cn(
         styles.paddingX,
-        'backdrop-filter-none w-full flex items-center py-5 fixed top-0 z-20 transition-visibility ease-in-out duration-300',
+        'transition-visibility fixed top-0 z-20 flex w-full items-center py-5 backdrop-filter-none duration-300 ease-in-out',
         { navbar: scrolled },
       )}
     >
       <div
         className={cn(
-          'absolute inset-0 bg-none z-0 transition-colors ease-in-out duration-300',
+          'absolute inset-0 z-0 bg-none transition-colors duration-300 ease-in-out',
           {
             'bg-primary/70': scrolled,
           },
         )}
       ></div>
-      <div className="w-full flex items-center max-w-7xl mx-auto gap-8 z-10">
+      <div className="z-10 mx-auto flex w-full max-w-7xl items-center gap-8">
         <Link
           to="/"
           className="flex flex-1 items-center gap-2"
@@ -85,20 +85,20 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
+          <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
+          <p className="flex cursor-pointer text-[18px] font-bold text-white">
             {t('navbar.logo.name')} &nbsp;
-            <span className="md:block hidden">| {t('navbar.logo.profession')}</span>
+            <span className="hidden md:block">| {t('navbar.logo.profession')}</span>
           </p>
         </Link>
 
-        <ul className="list-none hidden lg:flex flex-row gap-10">
+        <ul className="hidden list-none flex-row gap-10 lg:flex">
           {navLinks.map(nav => (
             <li
               key={nav.id}
               className={`${
                 active === nav.title ? 'text-white' : 'text-secondary'
-              } hover:text-white text-[18px] font-medium cursor-pointer transition-color ease-in-out duration-300`}
+              } transition-color cursor-pointer text-[18px] font-medium duration-300 ease-in-out hover:text-white`}
               onClick={() => setActive(nav.title)}
             >
               {nav.href ? (
@@ -112,7 +112,7 @@ const Navbar = () => {
 
         {!isDesktop && <LangButtons />}
 
-        <div className="lg:hidden flex justify-end items-center">
+        <div className="flex items-center justify-end lg:hidden">
           <MenuIcon open={toggle} setOpen={() => setToggle(!toggle)} />
 
           <motion.div
@@ -121,13 +121,13 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className={`${
               !toggle ? 'hidden' : 'flex'
-            }  p-6 menu-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } menu-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
           >
-            <ul className="list-none flex justify-center items-center flex-1 flex-col gap-4">
+            <ul className="flex flex-1 list-none flex-col items-center justify-center gap-4">
               {navLinks.map(nav => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
                     active === nav.title ? 'text-white' : 'text-secondary'
                   }`}
                   onClick={() => {

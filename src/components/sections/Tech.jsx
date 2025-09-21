@@ -2,7 +2,7 @@ import { lazy } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import PropTypes from 'prop-types';
 
 import { technologies } from '@/constants';
