@@ -11,15 +11,15 @@ import { useMatchMedia } from '@/hooks';
 import { styles } from '@/styles';
 import { fadeIn, textVariant } from '@/utils/motion';
 
-const BallCanvas = lazy(() => import('../canvas/Ball'));
+const BallCanvas = lazy(() => import('../canvas/Ball.jsx'));
 
 const TechMobile = ({ icon, name }) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-5 w-40 h-50 bg-tertiary p-5 rounded-2xl border-b-2 border-white">
+    <div className="h-50 flex w-40 flex-col items-center justify-center gap-5 rounded-2xl border-b-2 border-white bg-tertiary p-5">
       <div className="w-30">
         <img src={icon} className="w-full" alt="tech" />
       </div>
-      <p className="text-secondary text-[17px] text-center">{name}</p>
+      <p className="text-center text-[17px] text-secondary">{name}</p>
     </div>
   );
 };
@@ -32,7 +32,7 @@ const Tech = withSectionWrapper(() => {
     <>
       <motion.div
         variants={textVariant()}
-        className="flex flex-col justify-center items-center mb-10"
+        className="mb-10 flex flex-col items-center justify-center"
       >
         <p className={styles.sectionSubText}>{t('tech.subtitle')}</p>
         <h2 className={styles.sectionHeadText}>{t('tech.title')}</h2>
@@ -46,7 +46,7 @@ const Tech = withSectionWrapper(() => {
           !isDesktop ? (
             <TechMobile {...technology} key={technology.name} />
           ) : (
-            <div className="w-28 h-28" key={technology.name}>
+            <div className="h-28 w-28" key={technology.name}>
               <BallCanvas icon={technology.icon} />
             </div>
           ),
