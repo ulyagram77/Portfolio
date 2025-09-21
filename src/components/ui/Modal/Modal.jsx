@@ -12,6 +12,21 @@ import { styles } from '@/styles';
 const Modal = ({ open, setOpen }) => {
   const { t } = useTranslation();
 
+  const onOverlayClick = e => {
+    if (e.target === e.currentTarget) setOpen(false);
+  };
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') setOpen(false);
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open, setOpen]);
+
   useEffect(() => {
     if (open) {
       document.body.classList.add('overflow-hidden');
@@ -23,10 +38,6 @@ const Modal = ({ open, setOpen }) => {
       document.body.classList.remove('overflow-hidden');
     };
   }, [open, setOpen]);
-
-  const onOverlayClick = e => {
-    if (e.target === e.currentTarget) setOpen(false);
-  };
 
   return (
     <AnimatePresence>
